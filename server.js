@@ -36,7 +36,7 @@ httpServer.listen(process.env.PORT || 4000, () => {
 });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: 'https://postit-7in2.onrender.com', preflightContinue : true, }));
 app.use("/api/posts", posts);
 app.use("/api/users", users);
 app.use("/api/comments", comments);
